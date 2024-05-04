@@ -1,4 +1,7 @@
 # Clone a public repo and write its revision to a VERSION file.
 steps:
+  options:
+    logging: CLOUD_LOGGING_ONLY
   - name: 'gcr.io/cloud-builders/git'
     args: ['clone', 'https://github.com/garimas007/GCPLearning.git']
+    
