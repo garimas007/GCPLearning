@@ -4,7 +4,14 @@ steps:
   - name: 'gcr.io/cloud-builders/git'
     args: ['clone', 'https://github.com/garimas007/GCPLearning.git']
   - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['compute', 'ssh', 'instance-20240504-101310', '--command=echo hello', '--impersonate-service-account=230921322422-compute@developer.gserviceaccount.com']
+    args:
+      - 'compute'
+      - 'ssh'
+      - 'instance-20240504-101310'
+      - '--zone=us-west4-b'
+      - '--command=whoami'
+  #- name: 'gcr.io/cloud-builders/gcloud'
+  #  args: ['compute', 'ssh', 'instance-20240504-101310', '--command=whoami', '--impersonate-service-account=230921322422-compute@developer.gserviceaccount.com']
 
 options:
   logging: CLOUD_LOGGING_ONLY
